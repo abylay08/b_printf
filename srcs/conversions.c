@@ -31,6 +31,7 @@ int			conversion_handling(char cv, va_list arg)
 		return (u_cv(output, arg));
 	else if (cv == 'x')
 		return (x_cv(output, arg));
+	ft_list_clear(output);
 	return (0);
 }
 
@@ -39,16 +40,21 @@ size_t		s_cv(va_list arg)
 	char *str;
 
 	str = va_arg(arg, char *);
+	if(str == NULL)
+	{
+		ft_putstr("(null)");
+		return (0);
+	}
 	ft_putstr(str);
 	return (ft_strlen(str));
 }
 
 size_t		c_cv(va_list arg)
 {
-	char ch;
+	char c;
 
-	ch = (char)va_arg(arg, int);
-	write(1, &ch, 1);
+	c = (char)va_arg(arg, int); 
+	write(1, &c, 1);
 	return (1);
 }
 

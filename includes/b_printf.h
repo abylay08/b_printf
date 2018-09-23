@@ -26,11 +26,6 @@ typedef struct		s_list
 
 void				ft_putstr(char *str);
 void				ft_putchar(char c);
-char				*reverse(char str[], int length);
-void				ft_swap(char *a, char *b);
-size_t				ft_strlen(const char *str);
-char				*ft_strcpy(char *dst, char *src);
-void				ft_putstr(char *str);
 int					conversion_handling(char cv, va_list arg);
 size_t				s_cv(va_list arg);
 size_t				c_cv(va_list arg);
@@ -47,5 +42,6 @@ t_list				*ft_create_elem(char data);
 t_list				*ft_list_reverse(t_list *begin_list);
 void				ft_list_print(t_list *output);
 size_t				ft_strlen(const char *str);
+void				ft_list_clear(t_list *begin_list);
 
 #endif
