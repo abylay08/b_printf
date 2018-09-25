@@ -16,7 +16,7 @@ t_list	*ft_list_push_back(t_list *begin_list, char data)
 {
 	t_list *current;
 
-	if (!begin_list)
+	if (!(begin_list->data) || !begin_list)
 	{
 		begin_list = ft_create_elem(data);
 		return (begin_list);
