@@ -42,7 +42,7 @@ size_t		s_cv(va_list arg)
 	if (str == NULL)
 	{
 		ft_putstr("(null)");
-		return (0);
+		return (6);
 	}
 	ft_putstr(str);
 	return (ft_strlen(str));
@@ -59,14 +59,22 @@ size_t		c_cv(va_list arg)
 
 size_t		d_cv(t_list *output, va_list arg)
 {
+	int size;
+
 	output = ft_itoa_ll(va_arg(arg, int), output, 10);
 	ft_list_print(output);
-	return (ft_list_size(output));
+	size = ft_list_size(output);
+	ft_list_clear(output);
+	return (size);
 }
 
 size_t		x_cv(t_list *output, va_list arg)
 {
+	int size;
+
 	output = ft_itoa_ll(va_arg(arg, unsigned int), output, 16);
 	ft_list_print(output);
-	return (ft_list_size(output));
+	size = ft_list_size(output);
+	ft_list_clear(output);
+	return (size);
 }

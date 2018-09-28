@@ -14,22 +14,34 @@
 
 size_t		p_cv(t_list *output, va_list arg)
 {
+	int size;
+
 	ft_putstr("0x");
 	output = ft_itoa_ll(va_arg(arg, unsigned long), output, 16);
 	ft_list_print(output);
-	return (2 + ft_list_size(output));
+	size = 2 + ft_list_size(output);
+	ft_list_clear(output);
+	return (size);
 }
 
 size_t		o_cv(t_list *output, va_list arg)
 {
+	int size;
+
 	output = ft_itoa_ll(va_arg(arg, unsigned int), output, 8);
 	ft_list_print(output);
-	return (ft_list_size(output));
+	size = ft_list_size(output);
+	ft_list_clear(output);
+	return (size);
 }
 
 size_t		u_cv(t_list *output, va_list arg)
 {
+	int size;
+
 	output = ft_itoa_ll(va_arg(arg, unsigned int), output, 10);
 	ft_list_print(output);
-	return (ft_list_size(output));
+	size = ft_list_size(output);
+	ft_list_clear(output);
+	return (size);
 }
