@@ -16,7 +16,7 @@ int			conversion_handling(char cv, va_list arg)
 {
 	t_list *output;
 
-	output = ft_create_elem('\0');
+	output = ft_create_elem(0);
 	if (cv == 's')
 		return (s_cv(arg));
 	else if (cv == 'c')
@@ -31,6 +31,11 @@ int			conversion_handling(char cv, va_list arg)
 		return (u_cv(output, arg));
 	else if (cv == 'x')
 		return (x_cv(output, arg));
+	else if (cv == '%')
+	{
+		write(1, "%", 1);
+		return (1);
+	}
 	return (0);
 }
 

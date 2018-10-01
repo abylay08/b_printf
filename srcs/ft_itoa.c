@@ -21,7 +21,6 @@ t_list		*ft_itoa_ll(long long num, t_list *str, int base)
 	if (num == 0)
 	{
 		str = ft_list_push_back(str, '0');
-		str = ft_list_push_back(str, '\0');
 		return (str);
 	}
 	if (num < 0 && base == 10)
